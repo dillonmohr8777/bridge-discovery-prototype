@@ -75,3 +75,20 @@ Target: enter the meeting with a coherent point of view while keeping all client
 - When new functionality appears, classify it as existing scope, clarification, or change request.
 - Do not promise automated legal/licensing verification until sources and review responsibility are defined.
 - End with a read-back of decisions and owners.
+
+## Decision capture log
+
+Fill this live during the meeting — one row per decision that leaves the room. Copy `approved`/`rejected` rows into `docs/decision-log.md` afterward, and use `docs/tori-prototype-difference-checklist.md` for the walkthrough reconciliation itself.
+
+| Decision | Status (approved / preferred pending revision / rejected / open) | Owner | Date | Rationale | Affected routes | Follow-up acceptance criteria |
+|---|---|---|---|---|---|---|
+| Visual direction (D-01) | | | | | `/directions`, all routes via tokens | |
+| Retailer vs dispensary account types (D-02) | | | | | `/join`, `/directory`, data model | |
+| Verification evidence by role (D-03) | | | | | `/join`, `/admin/verification` | |
+| Meaning of the public "Verified" label (D-04) | | | | | `/directory`, `/profile/[slug]` | |
+| Public / member-only / private fields (D-05) | | | | | `/profile/[slug]`, `/dashboard` | |
+| First market and priority role (D-07) | | | | | onboarding copy, launch plan | |
+| Between-session approval owner (D-08) | | | | | process | |
+| MVP boundary confirmations / change requests | | | | | scope | |
+| Asset owners and due dates | | | | | brand assets | |
+| Next review date | | | | | process | |
