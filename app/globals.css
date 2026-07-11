@@ -164,6 +164,8 @@ textarea { resize: vertical; }
 .result-bar { align-items: center; display: flex; justify-content: space-between; margin-bottom: 18px; }
 .result-count { color: var(--text); margin-bottom: 0; }
 .empty-state { background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius); padding: 70px 30px; text-align: center; }
+.empty-state .form-hint { margin-top: 18px; }
+.near-miss-bar { margin-top: 26px; }
 
 .join-form { max-width: 920px; }
 fieldset { border: 0; margin: 0; padding: 0; }

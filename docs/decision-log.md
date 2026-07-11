@@ -36,6 +36,9 @@ All Phase 1 work repaired existing defects without pre-approving product or bran
 | Direction-card swatches were corrected to the hexes the themes actually apply | The cards showed colors that differ from what previewing applies, which would distort Tori's comparison | None — consistency fix; Tori still chooses the direction |
 | Fictional data is labeled in place on landing, directory, dashboard, and admin | Prototype metrics could be mistaken for production data in the meeting | None — required by build spec |
 | One Netlify staging link per provisional direction (`bridge-preview-current` / `-network` / `-botanical` .netlify.app) | Lets Tori compare the three directions side by side on real flows; each build is pinned via `NEXT_PUBLIC_DIRECTION_LOCK`, labeled "Provisional preview", and marked noindex | None for the demo tooling; Tori still owns the direction choice (D-01) |
+| Directory search matches ANDed word-prefix tokens across name/location/role/serving/description/specialties, with US state abbreviations expanding to state names (`lib/search.ts`) | "Erie, PA" returned 0 results on staging: the old matcher required the whole query as one literal substring and ignored the serving field; whole-network search itself still requires the backend | Miraj — confirm as the server-side search contract at gate B |
+| Sample network expanded to 10 fictional profiles across more roles and markets, including Erie and Pittsburgh, PA | Natural demo queries should return results; target launch states are unknown (open D-07), so markets are placeholders re-seeded once Tori names them | Tori/Melissa — D-07 decides the real market list |
+| Directory empty state echoes active constraints, offers clear actions, shows near-filter matches, and states the prototype searches sample data only | A zero-result search looked broken and implied a live network exists | None — required-state coverage per build spec |
 
 ## Open decision register
 
