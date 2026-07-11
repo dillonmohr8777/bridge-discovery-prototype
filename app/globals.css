@@ -136,6 +136,7 @@ nav a[aria-current="page"] { color: var(--text); }
 .status-chip.verified { background: color-mix(in srgb, var(--success) 13%, var(--surface)); color: var(--success); }
 .status-chip.pending { background: var(--signal-soft); color: var(--warning); }
 .status-chip.warning { background: color-mix(in srgb, var(--danger) 10%, var(--surface)); color: var(--danger); }
+.preview-chip { flex-shrink: 1; min-width: 0; text-align: center; white-space: normal; }
 .muted { color: var(--muted); }
 .tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
 .tag { background: var(--surface-alt); border-radius: 999px; color: var(--muted); font-size: .72rem; font-weight: 700; padding: .32rem .62rem; }

@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { directionNames, lockedTheme } from "@/lib/direction-lock";
 import { applyTheme, useTheme, type ThemeId } from "@/lib/theme";
 
 // Swatches must match the theme tokens in globals.css so the comparison is honest.
@@ -42,8 +43,8 @@ export default function DirectionsPage() {
   return (
     <section className="page shell">
       <div className="page-heading split-heading">
-        <div><p className="eyebrow">Provisional brand exploration</p><h1>Three directions for Tori to react to.</h1><p className="lede">These are decision tools, not an approved Bridge identity. Choose a direction, then refine it after the prototype walkthrough.</p></div>
-        <ThemeSwitcher />
+        <div><p className="eyebrow">Provisional brand exploration</p><h1>Three directions for Tori to react to.</h1><p className="lede">These are decision tools, not an approved Bridge identity. Choose a direction, then refine it after the prototype walkthrough.</p>{lockedTheme && <p className="form-hint">This staging build is pinned to {directionNames[lockedTheme]}. Each direction has its own staging link for side-by-side comparison.</p>}</div>
+        {!lockedTheme && <ThemeSwitcher />}
       </div>
       <div className="direction-grid">
         {directions.map((direction) => (
@@ -58,10 +59,18 @@ export default function DirectionsPage() {
             <button
               aria-pressed={theme === direction.id}
               className="button secondary full"
+              disabled={Boolean(lockedTheme) && lockedTheme !== direction.id}
               onClick={() => applyTheme(direction.id)}
+              title={lockedTheme && lockedTheme !== direction.id ? `This staging build is pinned to ${directionNames[lockedTheme]} — open that direction's staging link to compare` : undefined}
               type="button"
             >
-              {theme === direction.id ? "Previewing across prototype" : "Preview across prototype"}
+              {lockedTheme
+                ? lockedTheme === direction.id
+                  ? "This build's pinned direction"
+                  : `Pinned build — see the ${directionNames[direction.id]} link`
+                : theme === direction.id
+                  ? "Previewing across prototype"
+                  : "Preview across prototype"}
             </button>
           </article>
         ))}

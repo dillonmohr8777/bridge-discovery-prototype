@@ -7,6 +7,8 @@ import { getProfile, profiles } from "@/lib/data";
 
 type ProfilePageProps = { params: Promise<{ slug: string }> };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return profiles.map((profile) => ({ slug: profile.slug }));
 }

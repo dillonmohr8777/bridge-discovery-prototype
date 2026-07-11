@@ -35,6 +35,7 @@ All Phase 1 work repaired existing defects without pre-approving product or bran
 | Non-functional controls are disabled with a visible reason instead of looking active | Dead active-looking buttons read as broken in a client demo | Dillon (UX) |
 | Direction-card swatches were corrected to the hexes the themes actually apply | The cards showed colors that differ from what previewing applies, which would distort Tori's comparison | None — consistency fix; Tori still chooses the direction |
 | Fictional data is labeled in place on landing, directory, dashboard, and admin | Prototype metrics could be mistaken for production data in the meeting | None — required by build spec |
+| One Netlify staging link per provisional direction (`bridge-preview-current` / `-network` / `-botanical` .netlify.app) | Lets Tori compare the three directions side by side on real flows; each build is pinned via `NEXT_PUBLIC_DIRECTION_LOCK`, labeled "Provisional preview", and marked noindex | None for the demo tooling; Tori still owns the direction choice (D-01) |
 
 ## Open decision register
 

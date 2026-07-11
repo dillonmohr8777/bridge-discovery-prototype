@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { lockedTheme, themeIds, type ThemeId } from "./direction-lock";
 
-export const themeIds = ["current", "network", "botanical"] as const;
-export type ThemeId = (typeof themeIds)[number];
+export { themeIds, type ThemeId } from "./direction-lock";
 
 export const THEME_STORAGE_KEY = "bridge-theme";
 const THEME_EVENT = "bridge-theme";
 
 export function applyTheme(id: ThemeId) {
+  if (lockedTheme) return; // staging builds are pinned to one direction
   document.documentElement.setAttribute("data-theme", id);
   window.localStorage.setItem(THEME_STORAGE_KEY, id);
   window.dispatchEvent(new CustomEvent<ThemeId>(THEME_EVENT, { detail: id }));
@@ -19,11 +20,12 @@ function isThemeId(value: string | null): value is ThemeId {
 }
 
 // Reflects the active provisional direction; stays "current" until mounted so
-// server and client markup match.
+// server and client markup match. Locked builds always report the pinned id.
 export function useTheme(): ThemeId {
-  const [theme, setTheme] = useState<ThemeId>("current");
+  const [theme, setTheme] = useState<ThemeId>(lockedTheme ?? "current");
 
   useEffect(() => {
+    if (lockedTheme) return;
     const syncFromDocument = () => {
       const active = document.documentElement.getAttribute("data-theme");
       if (isThemeId(active)) setTheme(active);
