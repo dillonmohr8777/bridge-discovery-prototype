@@ -149,6 +149,7 @@ nav a:hover { color: var(--text); }
 .split-heading { align-items: end; display: flex; gap: 32px; justify-content: space-between; max-width: none; }
 .split-heading > div:first-child { max-width: 780px; }
 .directory-layout { display: grid; gap: 28px; grid-template-columns: 250px 1fr; }
+.directory-layout > * { min-width: 0; }
 .filter-panel { align-self: start; display: grid; gap: 10px; padding: 20px; position: sticky; top: 100px; }
 label { font-size: .79rem; font-weight: 800; margin-top: 6px; }
 input, select, textarea { background: var(--canvas); border: 1px solid var(--border); border-radius: 10px; min-height: 44px; padding: .65rem .75rem; width: 100%; }
@@ -218,7 +219,7 @@ fieldset { border: 0; margin: 0; padding: 0; }
 .admin-nav button.active { background: var(--accent-soft); color: var(--accent); font-weight: 800; }
 .table-card { min-width: 0; overflow: hidden; padding: 0; }
 .table-card .result-bar { padding: 18px 22px 0; }
-.table-scroll { overflow-x: auto; }
+.table-scroll { overflow-x: auto; position: relative; }
 table { border-collapse: collapse; font-size: .82rem; min-width: 780px; width: 100%; }
 th, td { border-top: 1px solid var(--border); padding: 14px 16px; text-align: left; }
 th { color: var(--muted); font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; }
@@ -263,6 +264,7 @@ th { color: var(--muted); font-size: .7rem; letter-spacing: .05em; text-transfor
   .hero-copy { max-width: 750px; }
   .hero-panel { min-height: 420px; }
   .card-grid, .direction-grid { grid-template-columns: repeat(2, 1fr); }
+  .card-grid.two { grid-template-columns: 1fr; }
   .metric-grid { grid-template-columns: repeat(2, 1fr); }
   .dashboard-grid, .profile-layout { grid-template-columns: 1fr; }
   .contact-card { position: static; }

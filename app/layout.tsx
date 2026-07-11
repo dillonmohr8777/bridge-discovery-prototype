@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Bridge — Cannabis industry connections",
   description: "Discovery prototype for a verified cannabis industry directory and professional network.",
+  icons: { icon: "/bridge-mark.svg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
