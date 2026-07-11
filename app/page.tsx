@@ -14,11 +14,12 @@ export default function Home() {
             <Link className="button primary" href="/directory">Explore the directory</Link>
             <Link className="button secondary" href="/join">Create a profile</Link>
           </div>
-          <div className="trust-row">
+          <div className="trust-row" aria-describedby="trust-row-note">
             <span><strong>420+</strong> profiles</span>
             <span><strong>28</strong> markets</span>
             <span><strong>71%</strong> verified</span>
           </div>
+          <p className="form-hint" id="trust-row-note">Illustrative sample figures for the discovery prototype.</p>
         </div>
         <div className="hero-panel" aria-label="Example connection workflow">
           <div className="mini-card offset-left"><span className="avatar">CC</span><div><strong>Cascade Canna Co.</strong><small>Brand · Portland</small></div></div>

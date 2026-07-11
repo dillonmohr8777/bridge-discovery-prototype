@@ -35,7 +35,7 @@ export function DirectoryClient() {
         <button className="text-button" onClick={() => { setQuery(""); setRole("All roles"); setVerifiedOnly(false); }} type="button">Clear filters</button>
       </aside>
       <div>
-        <div className="result-bar"><strong>{matches.length} members</strong><span className="muted">Sorted by relevance</span></div>
+        <div className="result-bar"><p className="result-count" role="status"><strong>{matches.length === 1 ? "1 member" : `${matches.length} members`}</strong></p><span className="muted">Fictional sample profiles</span></div>
         {matches.length ? <div className="card-grid two">{matches.map((profile) => <ProfileCard key={profile.slug} profile={profile} />)}</div> : <div className="empty-state"><h2>No matches yet</h2><p>Try a broader location or remove a filter.</p></div>}
       </div>
     </div>

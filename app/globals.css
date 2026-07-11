@@ -161,6 +161,7 @@ textarea { resize: vertical; }
 .check-row input { accent-color: var(--accent); min-height: auto; width: auto; }
 .text-button { background: none; border: 0; color: var(--accent); cursor: pointer; font-size: .82rem; font-weight: 800; padding: .5rem 0; text-align: left; }
 .result-bar { align-items: center; display: flex; justify-content: space-between; margin-bottom: 18px; }
+.result-count { color: var(--text); margin-bottom: 0; }
 .empty-state { background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius); padding: 70px 30px; text-align: center; }
 
 .join-form { max-width: 920px; }
@@ -212,6 +213,9 @@ fieldset { border: 0; margin: 0; padding: 0; }
 .request-row div { display: grid; }
 .request-row small { color: var(--muted); }
 .request-row button, table button { background: var(--surface-alt); border: 0; border-radius: 999px; cursor: pointer; font-size: .75rem; font-weight: 800; padding: .48rem .75rem; }
+.request-row button:disabled, table button:disabled, .admin-nav button:disabled { cursor: not-allowed; opacity: .5; }
+.boundary-note { background: var(--signal-soft); border-radius: 12px; color: var(--text); font-size: .88rem; margin-top: 14px; padding: 14px 16px; }
+.table-hint { padding: 0 22px 18px; }
 .score-row { align-items: baseline; display: flex; gap: 10px; }
 .score-row strong { font-size: 2.5rem; }
 .score-row span { color: var(--success); font-weight: 800; }
@@ -246,6 +250,7 @@ th { color: var(--muted); font-size: .7rem; letter-spacing: .05em; text-transfor
 .direction-card h2 { font-size: 1.65rem; margin-top: 22px; }
 .direction-card p { font-size: .92rem; }
 .direction-card .button { margin-top: auto; }
+.direction-card .button[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent); color: var(--accent); }
 .swatches { display: flex; gap: 7px; margin: 14px 0 22px; }
 .swatches span { border: 1px solid rgba(0,0,0,.1); border-radius: 50%; height: 32px; width: 32px; }
 .meeting-note { margin-top: 20px; }

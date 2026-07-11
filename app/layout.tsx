@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   icons: { icon: "/bridge-mark.svg" },
 };
 
+// Applies the saved provisional direction before first paint so a full page
+// load does not flash the default theme.
+const themeInitScript = `(function(){try{var t=window.localStorage.getItem("bridge-theme");if(t==="network"||t==="botanical"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();`;
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme="current">
+    <html lang="en" data-theme="current" suppressHydrationWarning>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <a className="skip-link" href="#main">Skip to content</a>
         <SiteHeader />
         <main id="main">{children}</main>
