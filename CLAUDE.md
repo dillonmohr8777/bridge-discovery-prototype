@@ -25,12 +25,13 @@ Bridge is a browser-based cannabis industry directory and professional network f
 
 Read these files before changing code:
 
-1. `.agents/marketing-context.md`
-2. `docs/product-definition.md`
-3. `docs/decision-log.md`
-4. `docs/source-and-asset-audit.md`
-5. `brand/bridge-provisional-brand-kit.md`
-6. `docs/monday-meeting-prep.md`
+1. `CLAUDE_BUILD_SPEC.md`
+2. `.agents/marketing-context.md`
+3. `docs/product-definition.md`
+4. `docs/decision-log.md`
+5. `docs/source-and-asset-audit.md`
+6. `brand/bridge-provisional-brand-kit.md`
+7. `docs/monday-meeting-prep.md`
 
 The repository contains a decision prototype, not production software. All member data and dashboard metrics are fictional.
 
