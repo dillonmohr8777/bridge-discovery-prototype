@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { BrandMark } from "./BrandMark";
+import { NavMenu } from "./NavMenu";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export function SiteHeader() {
@@ -7,12 +7,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="shell header-inner">
         <BrandMark />
-        <nav aria-label="Main navigation">
-          <Link href="/directory">Directory</Link>
-          <Link href="/dashboard">Dashboard</Link>
-          <Link href="/directions">Design</Link>
-          <Link href="/join">Join</Link>
-        </nav>
+        <NavMenu />
         <ThemeSwitcher compact />
       </div>
     </header>

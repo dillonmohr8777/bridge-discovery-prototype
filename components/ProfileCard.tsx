@@ -16,7 +16,7 @@ export function ProfileCard({ profile }: { profile: Profile }) {
       <div className="tag-row" aria-label="Specialties">
         {profile.specialties.map((tag) => <span className="tag" key={tag}>{tag}</span>)}
       </div>
-      <Link className="text-link" href={profile.slug === "cascade-canna" ? "/profile/cascade-canna" : "/profile/cascade-canna"}>
+      <Link className="text-link" href={`/profile/${profile.slug}`}>
         View profile <span aria-hidden="true">→</span>
       </Link>
     </article>

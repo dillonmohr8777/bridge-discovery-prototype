@@ -9,4 +9,11 @@ export type Profile = {
   specialties: string[];
   verified: boolean;
   initials: string;
+  serving: string;
+  about: string;
+  lookingFor: string[];
+  announcement?: {
+    title: string;
+    body: string;
+  };
 };

@@ -31,7 +31,7 @@ Open `http://localhost:3000`. Important routes:
 
 - `/directory`
 - `/join`
-- `/profile/cascade-canna`
+- `/profile/cascade-canna` (any member: `/profile/<slug>`)
 - `/dashboard`
 - `/admin/verification`
 - `/directions`
