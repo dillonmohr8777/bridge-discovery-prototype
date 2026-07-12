@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:staging": "node scripts/build-staging.mjs",
+    "test:staging": "node scripts/verify-staging.mjs"
   },
   "dependencies": {
     "next": "16.2.10",

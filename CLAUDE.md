@@ -43,9 +43,13 @@ npm run dev
 npm run typecheck
 npm run lint
 npm run build
+npm run build:staging
+npm run test:staging
 ```
 
 Do not claim a change is complete until typecheck, lint, and build pass.
+When staging output is involved, also require the cross-platform staging build
+and artifact verification commands to pass.
 
 ## Architecture
 

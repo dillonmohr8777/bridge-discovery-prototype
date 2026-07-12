@@ -57,4 +57,11 @@ This is a discovery prototype, not production software. There is no Supabase con
 npm run typecheck
 npm run lint
 npm run build
+npm run build:staging
+npm run test:staging
 ```
+
+`build:staging` creates three direction-pinned static builds under
+`staging/current`, `staging/network`, and `staging/botanical`. The verification
+command checks the expected routes, provisional label, theme lock, and noindex
+metadata before a staging upload.
