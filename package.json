@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "build:staging": "node scripts/build-staging.mjs",
+    "build:staging:current": "node scripts/build-staging-one.mjs current",
+    "build:staging:network": "node scripts/build-staging-one.mjs network",
+    "build:staging:botanical": "node scripts/build-staging-one.mjs botanical",
     "test:staging": "node scripts/verify-staging.mjs"
   },
   "dependencies": {

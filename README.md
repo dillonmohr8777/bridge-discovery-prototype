@@ -64,4 +64,5 @@ npm run test:staging
 `build:staging` creates three direction-pinned static builds under
 `staging/current`, `staging/network`, and `staging/botanical`. The verification
 command checks the expected routes, provisional label, theme lock, and noindex
-metadata before a staging upload.
+metadata before a staging upload. Netlify's three connected projects use the
+single-direction commands so each project builds only its assigned preview.

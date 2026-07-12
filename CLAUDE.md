@@ -44,6 +44,9 @@ npm run typecheck
 npm run lint
 npm run build
 npm run build:staging
+npm run build:staging:current
+npm run build:staging:network
+npm run build:staging:botanical
 npm run test:staging
 ```
 
