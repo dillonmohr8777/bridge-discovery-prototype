@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const links = [
-  { href: "/directory", label: "Directory" },
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/directions", label: "Design" },
-  { href: "/join", label: "Join" },
+  { href: "/", label: "Home", match: (p: string) => p === "/" },
+  { href: "/community", label: "Community News", match: (p: string) => p.startsWith("/community") },
+  { href: "/create", label: "Create", match: (p: string) => p.startsWith("/create") },
+  { href: "/my-profile", label: "My Profile", match: (p: string) => p.startsWith("/my-profile") },
+  { href: "/explore", label: "Explore", match: (p: string) => p.startsWith("/explore") || p.startsWith("/directory") },
 ] as const;
 
 export function NavMenu() {
@@ -43,7 +44,7 @@ export function NavMenu() {
       <nav aria-label="Main navigation" data-open={open || undefined} id="site-nav">
         {links.map((link) => (
           <Link
-            aria-current={pathname === link.href ? "page" : undefined}
+            aria-current={link.match(pathname) ? "page" : undefined}
             href={link.href}
             key={link.href}
             onClick={() => setOpen(false)}
