@@ -3,9 +3,9 @@ export default function MyProfilePage() {
   return (
     <div className="page shell">
       <div className="page-heading">
-        <p className="eyebrow">My Profile · business home base</p>
-        <h1>Verified identity and responsible contacts</h1>
-        <p className="lede small">Switch Public vs B2B views. Confirm sales and accounting contacts on first login and on a 90-day cadence. EIN documents never appear publicly.</p>
+        <p className="eyebrow">My Profile · Verified Cannabis Business</p>
+        <h1>Give cannabis partners the right way to reach you</h1>
+        <p className="lede small">Manage what the public sees and what verified businesses can access. Keep sales and accounting contacts current through a required monthly check, and protect EIN documents from public view.</p>
       </div>
       <MyProfileClient />
     </div>

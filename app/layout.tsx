@@ -1,25 +1,34 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
-import { lockedTheme } from "@/lib/direction-lock";
+import { DEFAULT_THEME, lockedTheme } from "@/lib/direction-lock";
+
+const bridgeDisplay = Poppins({
+  subsets: ["latin"],
+  variable: "--font-bridge",
+  weight: ["700", "800"],
+});
 
 export const metadata: Metadata = {
-  title: "Bridge — Cannabis industry connections",
-  description: "Discovery prototype for a verified cannabis industry directory and professional network.",
+  title: "Bridge: The cannabis industry, connected",
+  description: "A verified cannabis industry network for discovering businesses, following market activity, and reaching the right people.",
   icons: { icon: "/bridge-mark.svg" },
   // Staging previews must not be indexed.
   robots: lockedTheme ? { index: false, follow: false } : undefined,
 };
 
-// Applies the saved provisional direction before first paint so a full page
-// load does not flash the default theme. Skipped on direction-locked builds.
-const themeInitScript = `(function(){try{var t=window.localStorage.getItem("bridge-theme");if(t==="network"||t==="botanical"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();`;
+// Connected-signal is the purple Modern Network review URL. Force it before
+// first paint even when a Netlify site is still locked to Trusted Current.
+const unifiedThemeScript = `(function(){try{var h=location.hostname;if(h==="bridge-connected-signal.netlify.app"){document.documentElement.setAttribute("data-theme","network");}}catch(e){}})();`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme={lockedTheme ?? "current"} suppressHydrationWarning>
-      <body>
-        {!lockedTheme && <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />}
+    <html lang="en" data-theme={lockedTheme ?? DEFAULT_THEME} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: unifiedThemeScript }} />
+      </head>
+      <body className={bridgeDisplay.variable}>
         <a className="skip-link" href="#main">Skip to content</a>
         <SiteHeader />
         <main id="main">{children}</main>
